@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { PermissionsButton } from "@/components/suraksha/PermissionCenter";
 import { ShieldCheck, Satellite, BatteryFull, Wifi, MapPin } from "lucide-react";
 
 const NAV = ["Command", "Tools", "Recordings", "Contacts"];
@@ -82,6 +83,7 @@ export function SiteHeader() {
             <Wifi className="size-4" aria-hidden />
             <BatteryFull className="size-4" aria-hidden />
           </span>
+          <PermissionsButton />
           <span className="rounded-lg bg-secondary px-2.5 py-1.5 font-mono text-xs tabular-nums">
             {clock}
           </span>
