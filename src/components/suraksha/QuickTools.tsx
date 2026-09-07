@@ -52,8 +52,8 @@ export function QuickTools({ onFakeCall, onRecord }: Props) {
     {
       icon: ShieldAlert,
       title: "Safe-word listen",
-      desc: "On-device AI listens for your trigger word",
-      badge: "Armed",
+      desc: "Arm a spoken trigger word (asks for the mic first)",
+      badge: "Opt-in",
       accent: "emerald",
       action: () => toast("Safe-word listening armed", { description: 'Trigger word: "mango"' }),
     },
