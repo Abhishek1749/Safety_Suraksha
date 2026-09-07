@@ -142,7 +142,8 @@ export function RecordingDrawer({ open, mode, onOpenChange }: Props) {
       const loop = () => {
         analyser.getByteTimeDomainData(data);
         let peak = 0;
-        for (let i = 0; i < data.length; i++) peak = Math.max(peak, Math.abs(data[i] - 128) / 128);
+        for (let i = 0; i < data.length; i++)
+          peak = Math.max(peak, Math.abs((data[i] ?? 128) - 128) / 128);
         setLevels((prev) => [...prev.slice(1), Math.min(1, 0.05 + peak * 2.2)]);
         rafRef.current = requestAnimationFrame(loop);
       };
