@@ -13,9 +13,24 @@ export function SosHero() {
 
   const dispatch = useCallback((source: string) => {
     setArmed(true);
-    toast.error("SOS dispatched", {
-      description: `Location, live audio and guardian alerts sent · ${source}`,
+    const id = toast.error("SOS dispatched", {
+      description: `Guardian alert sent · ${source} · finding your location…`,
     });
+    if (typeof navigator !== "undefined" && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) =>
+          toast.error("SOS dispatched", {
+            id,
+            description: `${source} · location ${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)} (±${Math.round(pos.coords.accuracy)} m) attached`,
+          }),
+        () =>
+          toast.error("SOS dispatched", {
+            id,
+            description: `${source} · location unavailable — allow location in Permissions so responders can find you`,
+          }),
+        { enableHighAccuracy: true, timeout: 8000 },
+      );
+    }
     window.setTimeout(() => setArmed(false), 6000);
   }, []);
 
