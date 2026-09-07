@@ -287,7 +287,7 @@ export function RecordingDrawer({ open, mode, onOpenChange }: Props) {
           </SheetDescription>
         </SheetHeader>
 
-        <div className="space-y-5 px-4 pb-8">
+        <div className="mx-auto w-full max-w-3xl space-y-5 px-4 pb-8">
           <p className="flex items-start gap-2 rounded-xl bg-emerald/10 px-3 py-2.5 text-xs text-emerald ring-1 ring-emerald/25">
             <ShieldCheck className="mt-0.5 size-4 shrink-0" aria-hidden />
             Recording only ever starts when you press the button below. Recording other people may
@@ -309,7 +309,7 @@ export function RecordingDrawer({ open, mode, onOpenChange }: Props) {
               <div className="relative mb-4 overflow-hidden rounded-xl bg-black ring-1 ring-border">
                 <video
                   ref={videoRef}
-                  className="aspect-video w-full object-cover"
+                  className="mx-auto aspect-video max-h-[45vh] w-full bg-black object-contain"
                   muted
                   playsInline
                   autoPlay
@@ -361,11 +361,13 @@ export function RecordingDrawer({ open, mode, onOpenChange }: Props) {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="default">Default microphone</SelectItem>
-                    {mics.map((d, i) => (
-                      <SelectItem key={d.deviceId || i} value={d.deviceId || `mic-${i}`}>
-                        {d.label || `Microphone ${i + 1}`}
-                      </SelectItem>
-                    ))}
+                    {mics
+                      .filter((d) => d.deviceId && d.deviceId !== "default")
+                      .map((d, i) => (
+                        <SelectItem key={d.deviceId} value={d.deviceId}>
+                          {d.label || `Microphone ${i + 1}`}
+                        </SelectItem>
+                      ))}
                   </SelectContent>
                 </Select>
               </label>
@@ -378,11 +380,13 @@ export function RecordingDrawer({ open, mode, onOpenChange }: Props) {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="default">Default camera</SelectItem>
-                      {cams.map((d, i) => (
-                        <SelectItem key={d.deviceId || i} value={d.deviceId || `cam-${i}`}>
-                          {d.label || `Camera ${i + 1}`}
-                        </SelectItem>
-                      ))}
+                      {cams
+                        .filter((d) => d.deviceId && d.deviceId !== "default")
+                        .map((d, i) => (
+                          <SelectItem key={d.deviceId} value={d.deviceId}>
+                            {d.label || `Camera ${i + 1}`}
+                          </SelectItem>
+                        ))}
                     </SelectContent>
                   </Select>
                 </label>
