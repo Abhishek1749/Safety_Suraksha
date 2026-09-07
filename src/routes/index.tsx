@@ -5,6 +5,7 @@ import { SosHero } from "@/components/suraksha/SosHero";
 import { QuickTools } from "@/components/suraksha/QuickTools";
 import { ContactRibbon } from "@/components/suraksha/ContactRibbon";
 import { RecordingDrawer } from "@/components/suraksha/RecordingDrawer";
+import { PermissionOnboarding } from "@/components/suraksha/PermissionOnboarding";
 import { FakeCallModal } from "@/components/suraksha/FakeCallModal";
 import { PhoneCall, Mic, Siren, Map, Activity, Bot } from "lucide-react";
 
@@ -46,6 +47,7 @@ function Index() {
       <SiteHeader />
 
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6 sm:py-10">
+        <PermissionOnboarding />
         <SosHero />
         <QuickTools onFakeCall={() => setFakeCall(true)} onRecord={openRecorder} />
         <section id="recordings" className="glass rounded-3xl p-5 sm:p-6">
@@ -53,7 +55,8 @@ function Index() {
             <div className="min-w-0">
               <h2 className="truncate font-display text-lg font-bold">Evidence vault</h2>
               <p className="text-sm text-muted-foreground">
-                Encrypted clips with timestamps and cloud backup status.
+                Record audio or video evidence on this device, review it, then download or delete
+              it. Nothing uploads without you.
               </p>
             </div>
             <button
