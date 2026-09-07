@@ -70,7 +70,10 @@ export function ChatWorkspace() {
         </span>
       </header>
 
-      <div ref={scrollRef} className="max-h-[26rem] min-h-[18rem] space-y-4 overflow-y-auto px-5 py-5">
+      <div
+        ref={scrollRef}
+        className="max-h-[26rem] min-h-[18rem] space-y-4 overflow-y-auto px-5 py-5"
+      >
         {messages.map((m, i) => (
           <div key={i} className={`flex gap-3 ${m.role === "user" ? "flex-row-reverse" : ""}`}>
             <span
@@ -114,7 +117,10 @@ export function ChatWorkspace() {
         )}
 
         {error && (
-          <p role="alert" className="rounded-xl bg-crimson/12 px-4 py-3 text-sm text-crimson ring-1 ring-crimson/30">
+          <p
+            role="alert"
+            className="rounded-xl bg-crimson/12 px-4 py-3 text-sm text-crimson ring-1 ring-crimson/30"
+          >
             {error}
           </p>
         )}

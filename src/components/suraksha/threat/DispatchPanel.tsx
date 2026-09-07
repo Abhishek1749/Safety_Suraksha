@@ -1,10 +1,28 @@
 import { Activity, Clock, ServerCog, Siren } from "lucide-react";
 
 const METRICS = [
-  { icon: Siren, label: "Active incidents", value: "7", sub: "2 critical · 5 monitored", tone: "crimson" },
-  { icon: Clock, label: "Avg response time", value: "4m 12s", sub: "-38 s vs last week", tone: "emerald" },
+  {
+    icon: Siren,
+    label: "Active incidents",
+    value: "7",
+    sub: "2 critical · 5 monitored",
+    tone: "crimson",
+  },
+  {
+    icon: Clock,
+    label: "Avg response time",
+    value: "4m 12s",
+    sub: "-38 s vs last week",
+    tone: "emerald",
+  },
   { icon: Activity, label: "Reports today", value: "63", sub: "peak 21:00–23:00", tone: "amber" },
-  { icon: ServerCog, label: "App health", value: "99.94%", sub: "all services nominal", tone: "emerald" },
+  {
+    icon: ServerCog,
+    label: "App health",
+    value: "99.94%",
+    sub: "all services nominal",
+    tone: "emerald",
+  },
 ];
 
 const REGIONS = [
@@ -16,7 +34,13 @@ const REGIONS = [
 
 const QUEUE = [
   { id: "SRK-0907-14", type: "SOS hold", sector: "Sector 22", age: "1m", state: "Dispatching" },
-  { id: "SRK-0907-13", type: "Geofence breach", sector: "Old City", age: "6m", state: "Patrol en route" },
+  {
+    id: "SRK-0907-13",
+    type: "Geofence breach",
+    sector: "Old City",
+    age: "6m",
+    state: "Patrol en route",
+  },
   { id: "SRK-0907-11", type: "Voice distress", sector: "Ameerpet", age: "18m", state: "Resolved" },
 ];
 

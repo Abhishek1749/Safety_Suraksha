@@ -38,7 +38,8 @@ export const askSafetyAssistant = createServerFn({ method: "POST" })
 
     if (!res.ok) {
       const body = await res.text().catch(() => "");
-      if (res.status === 429) throw new Error("Too many requests right now — try again in a moment.");
+      if (res.status === 429)
+        throw new Error("Too many requests right now — try again in a moment.");
       if (res.status === 402)
         throw new Error("AI credits are exhausted for this workspace. Add credits to continue.");
       throw new Error(`Assistant unavailable (${res.status}). ${body.slice(0, 180)}`);

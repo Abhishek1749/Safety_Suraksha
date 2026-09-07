@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -66,9 +72,7 @@ export function FakeCallModal({ open, onOpenChange }: Props) {
   if (ringing || inCall) {
     return (
       <Dialog open={open} onOpenChange={(o) => (o ? onOpenChange(true) : close())}>
-        <DialogContent
-          className="max-w-sm overflow-hidden border-border bg-background p-0"
-        >
+        <DialogContent className="max-w-sm overflow-hidden border-border bg-background p-0">
           <DialogHeader className="sr-only">
             <DialogTitle>Incoming call from {caller}</DialogTitle>
             <DialogDescription>Simulated call screen</DialogDescription>

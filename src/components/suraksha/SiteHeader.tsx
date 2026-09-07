@@ -5,7 +5,6 @@ import { ShieldCheck, Satellite, BatteryFull, Wifi, MapPin } from "lucide-react"
 
 const NAV = ["Command", "Tools", "Recordings", "Contacts"];
 
-
 export function SiteHeader() {
   const [clock, setClock] = useState("--:--:--");
 
@@ -71,7 +70,6 @@ export function SiteHeader() {
             Assistant
           </Link>
         </nav>
-
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <span className="hidden items-center gap-2 rounded-full bg-emerald/12 px-3 py-1.5 text-xs font-medium text-emerald ring-1 ring-emerald/35 md:inline-flex">

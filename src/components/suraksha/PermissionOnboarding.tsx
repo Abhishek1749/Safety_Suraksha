@@ -29,10 +29,7 @@ export function PermissionOnboarding() {
 
   return (
     <>
-      <section
-        aria-labelledby="perm-intro-title"
-        className="glass relative rounded-3xl p-5 sm:p-6"
-      >
+      <section aria-labelledby="perm-intro-title" className="glass relative rounded-3xl p-5 sm:p-6">
         <div className="grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center">
           <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-emerald/12 text-emerald ring-1 ring-emerald/30">
             <ShieldCheck className="size-5" aria-hidden />

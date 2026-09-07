@@ -35,7 +35,9 @@ function AssistantPage() {
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6 sm:py-10">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="min-w-0">
-            <h1 className="font-display text-2xl font-bold sm:text-3xl">Safety &amp; AI assistant</h1>
+            <h1 className="font-display text-2xl font-bold sm:text-3xl">
+              Safety &amp; AI assistant
+            </h1>
             <p className="text-sm text-muted-foreground">
               Guidance, voice triggers and contact intelligence — always one tap away.
             </p>

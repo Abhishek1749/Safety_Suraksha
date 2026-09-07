@@ -48,13 +48,18 @@ export function VoiceCommands() {
 
   useEffect(() => {
     if (!listening) return;
-    const samples = ["…ambient noise", "…footsteps nearby", "…speech detected", "…no keyword match"];
+    const samples = [
+      "…ambient noise",
+      "…footsteps nearby",
+      "…speech detected",
+      "…no keyword match",
+    ];
     const id = setInterval(() => {
       setHeard((h) =>
-        [`${new Date().toLocaleTimeString("en-GB")} ${samples[Math.floor(Math.random() * samples.length)]}`, ...h].slice(
-          0,
-          5,
-        ),
+        [
+          `${new Date().toLocaleTimeString("en-GB")} ${samples[Math.floor(Math.random() * samples.length)]}`,
+          ...h,
+        ].slice(0, 5),
       );
     }, 2200);
     return () => clearInterval(id);
@@ -120,7 +125,11 @@ export function VoiceCommands() {
                 : "bg-emerald text-background hover:bg-emerald/90"
             }`}
           >
-            {listening ? <MicOff className="size-4" aria-hidden /> : <Mic className="size-4" aria-hidden />}
+            {listening ? (
+              <MicOff className="size-4" aria-hidden />
+            ) : (
+              <Mic className="size-4" aria-hidden />
+            )}
             {listening ? "Stop listening" : "Arm voice trigger"}
           </button>
 

@@ -13,12 +13,60 @@ type Contact = {
 };
 
 const CONTACTS: Contact[] = [
-  { id: "c1", name: "Priya Nair", relation: "Sister", tier: 1, km: 0.8, status: "available", phone: "+919866011111" },
-  { id: "c2", name: "Amma", relation: "Mother", tier: 1, km: 6.4, status: "available", phone: "+919849000000" },
-  { id: "c3", name: "Rahul Verma", relation: "Colleague", tier: 3, km: 1.1, status: "available", phone: "+919000022222" },
-  { id: "c4", name: "Sneha Rao", relation: "Best friend", tier: 2, km: 2.3, status: "idle", phone: "+919000033333" },
-  { id: "c5", name: "Papa", relation: "Father", tier: 1, km: 6.4, status: "idle", phone: "+919849099999" },
-  { id: "c6", name: "Neighbour — Latha", relation: "Neighbour", tier: 2, km: 0.3, status: "offline", phone: "+919000044444" },
+  {
+    id: "c1",
+    name: "Priya Nair",
+    relation: "Sister",
+    tier: 1,
+    km: 0.8,
+    status: "available",
+    phone: "+919866011111",
+  },
+  {
+    id: "c2",
+    name: "Amma",
+    relation: "Mother",
+    tier: 1,
+    km: 6.4,
+    status: "available",
+    phone: "+919849000000",
+  },
+  {
+    id: "c3",
+    name: "Rahul Verma",
+    relation: "Colleague",
+    tier: 3,
+    km: 1.1,
+    status: "available",
+    phone: "+919000022222",
+  },
+  {
+    id: "c4",
+    name: "Sneha Rao",
+    relation: "Best friend",
+    tier: 2,
+    km: 2.3,
+    status: "idle",
+    phone: "+919000033333",
+  },
+  {
+    id: "c5",
+    name: "Papa",
+    relation: "Father",
+    tier: 1,
+    km: 6.4,
+    status: "idle",
+    phone: "+919849099999",
+  },
+  {
+    id: "c6",
+    name: "Neighbour — Latha",
+    relation: "Neighbour",
+    tier: 2,
+    km: 0.3,
+    status: "offline",
+    phone: "+919000044444",
+  },
 ];
 
 const STATUS_WEIGHT = { available: 0, idle: 18, offline: 55 } as const;
@@ -61,7 +109,9 @@ export function ContactPrioritizer() {
               onClick={() => setMode(m.id)}
               aria-pressed={mode === m.id}
               className={`min-h-9 rounded-lg px-3 text-xs font-semibold transition-colors ${
-                mode === m.id ? "bg-emerald text-background" : "text-muted-foreground hover:text-foreground"
+                mode === m.id
+                  ? "bg-emerald text-background"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {m.label}

@@ -99,7 +99,12 @@ export function ReportForm() {
               GPS auto-tag
             </Label>
             <div className="mt-2 flex gap-2">
-              <Input id="geo" value={geo} onChange={(e) => setGeo(e.target.value)} className="min-h-11" />
+              <Input
+                id="geo"
+                value={geo}
+                onChange={(e) => setGeo(e.target.value)}
+                className="min-h-11"
+              />
               <button
                 type="button"
                 onClick={() => {
@@ -141,7 +146,11 @@ export function ReportForm() {
                 accept="image/*,audio/*"
                 className="sr-only"
                 onChange={(e) =>
-                  setFiles(Array.from(e.target.files ?? []).map((f) => f.name).slice(0, 5))
+                  setFiles(
+                    Array.from(e.target.files ?? [])
+                      .map((f) => f.name)
+                      .slice(0, 5),
+                  )
                 }
               />
             </label>

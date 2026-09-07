@@ -9,7 +9,6 @@ import { PermissionOnboarding } from "@/components/suraksha/PermissionOnboarding
 import { FakeCallModal } from "@/components/suraksha/FakeCallModal";
 import { PhoneCall, Mic, Siren, Map, Activity, Bot } from "lucide-react";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -56,7 +55,7 @@ function Index() {
               <h2 className="truncate font-display text-lg font-bold">Evidence vault</h2>
               <p className="text-sm text-muted-foreground">
                 Record audio or video evidence on this device, review it, then download or delete
-              it. Nothing uploads without you.
+                it. Nothing uploads without you.
               </p>
             </div>
             <button
@@ -112,7 +111,6 @@ function Index() {
         </section>
 
         <ContactRibbon />
-
       </main>
 
       <div className="fixed inset-x-0 bottom-0 z-40 glass border-x-0 border-b-0 px-4 py-3">

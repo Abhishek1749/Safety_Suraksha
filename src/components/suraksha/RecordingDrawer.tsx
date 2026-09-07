@@ -60,7 +60,9 @@ export function RecordingDrawer({ open, mode, onOpenChange }: Props) {
   const [recording, setRecording] = useState(false);
   const [starting, setStarting] = useState(false);
   const [seconds, setSeconds] = useState(0);
-  const [levels, setLevels] = useState<number[]>(() => Array.from({ length: BAR_COUNT }, () => 0.05));
+  const [levels, setLevels] = useState<number[]>(() =>
+    Array.from({ length: BAR_COUNT }, () => 0.05),
+  );
   const [clips, setClips] = useState<Clip[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [cams, setCams] = useState<MediaDeviceInfo[]>([]);

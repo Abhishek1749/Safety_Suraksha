@@ -102,7 +102,6 @@ function MapPage() {
     return () => clearInterval(id);
   }, [route.path]);
 
-
   const outside = useMemo(() => {
     const d = Math.hypot(pos.x - ORIGIN.x, pos.y - ORIGIN.y);
     return geofenceOn && d > radius;
@@ -205,7 +204,9 @@ function MapPage() {
                   <button
                     type="button"
                     onClick={() =>
-                      toast.success("Routes recalculated", { description: `Destination: ${destination}` })
+                      toast.success("Routes recalculated", {
+                        description: `Destination: ${destination}`,
+                      })
                     }
                     className="min-h-11 shrink-0 rounded-xl bg-crimson px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-crimson/90"
                   >

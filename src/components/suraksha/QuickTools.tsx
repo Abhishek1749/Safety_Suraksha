@@ -89,9 +89,7 @@ export function QuickTools({ onFakeCall, onRecord }: Props) {
               </span>
               <span
                 className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest ${
-                  accent === "crimson"
-                    ? "bg-crimson/12 text-crimson"
-                    : "bg-emerald/12 text-emerald"
+                  accent === "crimson" ? "bg-crimson/12 text-crimson" : "bg-emerald/12 text-emerald"
                 }`}
               >
                 {badge}

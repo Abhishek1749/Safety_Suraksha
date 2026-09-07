@@ -88,7 +88,10 @@ export function ThreatMonitor() {
               />
             </svg>
             <div className="absolute inset-0 grid place-content-center text-center">
-              <p className="font-mono text-4xl font-bold tabular-nums" style={{ color: meta.color }}>
+              <p
+                className="font-mono text-4xl font-bold tabular-nums"
+                style={{ color: meta.color }}
+              >
                 {score}
               </p>
               <p className="text-[11px] uppercase tracking-widest text-muted-foreground">
@@ -125,7 +128,11 @@ export function ThreatMonitor() {
               style={{
                 width: `${emotion}%`,
                 background:
-                  emotion > 65 ? "var(--crimson)" : emotion > 35 ? "var(--amber)" : "var(--emerald)",
+                  emotion > 65
+                    ? "var(--crimson)"
+                    : emotion > 35
+                      ? "var(--amber)"
+                      : "var(--emerald)",
               }}
             />
           </div>
@@ -154,7 +161,11 @@ export function ThreatMonitor() {
           {logs.map((l) => {
             const sev = severityOf(l.text);
             const c =
-              sev === "high" ? "var(--crimson)" : sev === "medium" ? "var(--amber)" : "var(--emerald)";
+              sev === "high"
+                ? "var(--crimson)"
+                : sev === "medium"
+                  ? "var(--amber)"
+                  : "var(--emerald)";
             return (
               <li
                 key={l.id}

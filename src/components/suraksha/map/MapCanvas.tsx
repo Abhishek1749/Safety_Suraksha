@@ -236,12 +236,21 @@ export function MapCanvas({
               strokeWidth="2"
               strokeOpacity="0.5"
             />
-            <text x={DESTINATION.x + 24} y={DESTINATION.y + 5} fill="var(--crimson)" fontSize="13" fontWeight="700">
+            <text
+              x={DESTINATION.x + 24}
+              y={DESTINATION.y + 5}
+              fill="var(--crimson)"
+              fontSize="13"
+              fontWeight="700"
+            >
               Destination
             </text>
           </g>
 
-          <g style={{ transform: `translate(${userPos.x}px, ${userPos.y}px)` }} className="transition-transform duration-500">
+          <g
+            style={{ transform: `translate(${userPos.x}px, ${userPos.y}px)` }}
+            className="transition-transform duration-500"
+          >
             <circle r="22" fill="oklch(0.72 0.16 250)" fillOpacity="0.18" />
             <circle r="9" fill="oklch(0.72 0.16 250)" stroke="white" strokeWidth="2.5" />
           </g>
