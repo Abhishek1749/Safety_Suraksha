@@ -170,6 +170,7 @@ export function PermissionsButton({ className = "" }: { className?: string }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
+        aria-label="Permissions and privacy"
         className={`flex min-h-10 items-center gap-2 rounded-lg bg-secondary px-3 text-xs font-semibold transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${className}`}
       >
         <ShieldCheck className="size-4" aria-hidden />

@@ -118,6 +118,7 @@ function Index() {
           <button
             type="button"
             onClick={() => setFakeCall(true)}
+            aria-label="Start a fake incoming call"
             className="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-secondary text-sm font-semibold transition-colors hover:bg-accent"
           >
             <PhoneCall className="size-4" aria-hidden />
@@ -126,6 +127,7 @@ function Index() {
           <button
             type="button"
             onClick={() => openRecorder("audio")}
+            aria-label="Open the evidence recorder"
             className="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-secondary text-sm font-semibold transition-colors hover:bg-accent"
           >
             <Mic className="size-4" aria-hidden />
